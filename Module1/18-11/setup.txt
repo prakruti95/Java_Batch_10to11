@@ -1,0 +1,18 @@
+JDK->Java Development Kit[Compiler]
+JRE->Java Runtime Environment[System Library]
+JVM->Java Virtual Machine[Machine]
+
+Java Versions:
+8,11,17,21
+
+Jdk-8
+
+
+Eclipse IDE
+J2EE
+
+
+
+
+
+
