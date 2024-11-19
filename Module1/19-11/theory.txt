@@ -1,0 +1,5 @@
+Java Versions/Perspective
+
+SE->standard edition
+EE->enterprise edition
+ME->micro edition
