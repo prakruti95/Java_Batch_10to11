@@ -1,0 +1,6 @@
+Constructor : Method having a same as a classname
+
+Types of Constructor
+1)Default Constructor
+2)Parameterized Constructor
+3)Copy Constructor
