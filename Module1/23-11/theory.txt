@@ -1,0 +1,21 @@
+Wrapper Class
+
+int -> Integer
+float -> Float
+character ->Character
+double ->Double
+
+String a= "8";
+String b = "8";
+
+c=Integer.parseInt(a)+Integer.parseInt(b);
+16
+
+tops
+tops4
+----------------------
+loop
+condition
+pointer
+variable declaration
+functions

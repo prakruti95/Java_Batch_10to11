@@ -1,0 +1,11 @@
+Keywords:
+this -> refrence keywords
+static
+	1)variable
+	2)method
+	3)block
+
+Encapsulation
+
+JavaFX
+WindowBuilder
