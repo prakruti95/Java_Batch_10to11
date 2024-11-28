@@ -1,0 +1,3 @@
+create a program which call the method using super keyword
+
+[2 class one is parent one child inherit the first class and access paren's method in from child]
