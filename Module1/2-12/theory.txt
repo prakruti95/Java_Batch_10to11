@@ -1,0 +1,13 @@
+Method Overloading:When two or more methods having a same name 
+and number of parameters are diffrent
+
+
+
+Method Overriding:When two or more methods having a same name 
+and number of parameters are also same
+
+
+
+Non abstract class only supports non abstract methods
+
+Abstract class supports abstract methods as well as non abstract methods
