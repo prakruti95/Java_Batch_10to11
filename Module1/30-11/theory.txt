@@ -1,0 +1,29 @@
+Collection Framework:
+
+Collection:
+Class
+Methods
+Interface
+
+
+Main Interface:
+1)List -> ArrayList,LinkedList
+2)Set -> HashSet,LinkedHashSet,Treeset
+3)Map -> HashMap
+
+Class:
+Vector
+Stack
+
+Interface:
+Comparable
+Comparator
+
+
+
+
+
+
+
+
+
