@@ -1,0 +1,21 @@
+LinkedList
+
+1)singly linkedlist
+2)doubly linkedlist
+
+add
+addAll
+remove
+removeAll
+retainAll
+addFirst
+addLast
+
+Vector
+Stack
+
+Set:
+
+
+
+
