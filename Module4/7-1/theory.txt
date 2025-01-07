@@ -1,0 +1,23 @@
+Advance Java -> webiste development
+dynamic web project->
+
+-----------------------------------------------
+Project Name -> Test8
+Deployment Descriptor -> option from where you can create launching file
+Web Services
+Java Resources -> Your Java Files
+build
+src -> main -> webapp -> You can create yout HTML Files/JSP Files
+src -> main -> webapp -> WEB-INF ->lib -> paste your libraries[Jar Files]
+
+----------------------------------------------
+Dynamic web project by default file name ->index.html
+web.xml file ->launching file
+
+
+Frontend:
+Template integration
+Basic HTML Tags
+Basic CSS
+Javascript validations
+Servlet
