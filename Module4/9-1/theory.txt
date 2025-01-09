@@ -1,0 +1,31 @@
+CSS->Cascading Style Sheets
+
+HTML Web Pages ->style,decoration
+
+Types of CSS:
+
+1)Inline CSS -> it's use if we want change in a single line
+2)Internal CSS -> same tag
+3)Extrernal CSS -> 
+
+# -> id
+
+. -> class
+
+#sapna
+{
+	color
+	font
+}
+
+.sapna2
+{
+	color
+	font
+}
+
+
+
+<h1 id="sapna" class="sapna2"> Tops </h1>
+
+
