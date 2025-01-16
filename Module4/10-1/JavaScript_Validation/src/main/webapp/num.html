@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	
+	<script type="text/javascript">
+		
+		function notempty(elem,msg)
+		{
+			
+			var numexp= /^[0-9]+$/;
+			if(elem.value.match(numexp))
+			{
+				return true;
+			}
+			else
+			{
+				alert(msg);
+				elem.focus();
+				return false;
+			}
+		}
+		
+	</script>
+</head>
+<body>
+
+
+<form>
+
+<p>
+	<input type="text" id="num" name="num">
+	<input type="button" value="submit" onclick="notempty(document.getElementById('num'),'Please Enter Numbers Only')">
+</p>
+
+
+</form>
+
+
+</body>
+</html>

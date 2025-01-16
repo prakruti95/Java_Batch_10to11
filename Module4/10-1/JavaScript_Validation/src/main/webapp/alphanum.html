@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+	
+	<script type="text/javascript">
+		
+		function notempty(elem,msg)
+		{
+			
+			var alphaexp= /^[a-zA-Z0-9]+$/;
+			if(elem.value.match(alphaexp))
+			{
+				return true;
+			}
+			else
+			{
+				alert(msg);
+				elem.focus();
+				return false;
+			}
+		}
+		
+	</script>
+</head>
+<body>
+
+
+<form>
+
+<p>
+	<input type="text" id="alpha" name="alpha">
+	<input type="button" value="submit" onclick="notempty(document.getElementById('alpha'),'Please Enter Alphabets Only')">
+</p>
+
+
+</form>
+
+
+</body>
+</html>
