@@ -1,0 +1,40 @@
+JSP: Java Server Page
+
+Servlet
+
+JSP is a extension version of Servlet
+
+1)
+index.html -> html code
++ merge[Mapping] -> @WebServlet("/a")
+Servlet ->java code
+
+2)
+index.jsp->html+java
+
+Predefined Tags
+
+1)Scriptlet Tag -> <% java source code %>
+2)Expression Tag -> <%= statement %>
+3)Declaraion Tag -> <%! logic %>
+
+Redirection
+
+jsp ->jsp
+
+implicit object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
