@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.model.SignupModel;
 
@@ -71,10 +72,13 @@ public class Dao
 				int id = set.getInt(1);
 				String uname = set.getString(2);
 				String email = set.getString(3);
-				String pass = set.getString(4);
+				String phone = set.getString(4);
+				String pass = set.getString(5);
 				
 				m2 = new SignupModel();
+				m2.setFullname(uname);
 				m2.setEmail(email);
+				m2.setPhone(phone);
 				m2.setPassword(pass);
 			}
 			else
@@ -94,5 +98,47 @@ public class Dao
 			return m2;
 		
 	}
+	
+	public static SignupModel getemail(String email)
+	{
+		SignupModel m = null;
+		
+		Connection con = Dao.getconnect();
+		
+		try 
+		{
+			PreparedStatement ps = con.prepareStatement("select * from signup where email=?");
+			ps.setString(1,email);
+			
+			ResultSet set = ps.executeQuery();
+			
+			if(set.next())
+			{
+				int id = set.getInt(1);
+				String fullname = set.getString(2);
+				String email1 = set.getString(3);
+				String phone = set.getString(4);
+				String pass = set.getString(5);
+				
+				m = new SignupModel();
+				m.setId(id);
+				m.setFullname(fullname);
+				m.setEmail(email1);
+				m.setPhone(phone);
+				m.setPassword(pass);
+				
+				
+			}
+		} 
+		catch (SQLException e) 
+		{
+		
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return m;
+	}
+	
+	
 	
 }

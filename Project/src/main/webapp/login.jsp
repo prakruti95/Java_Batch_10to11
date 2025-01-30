@@ -21,6 +21,8 @@
 		{
 			session.setAttribute("myproject",true);
 			session.setAttribute("email",m2.getEmail());
+			session.setAttribute("name",m2.getFullname());
+			session.setAttribute("phone",m2.getPhone());
 			
 			response.sendRedirect("dashboard.jsp");	
 		}

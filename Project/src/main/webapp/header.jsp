@@ -32,14 +32,10 @@
    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-
 	
-	      
-  <style type="text/css">
-      
-      	
-
-			.swd-button 
+	<style type="text/css">
+		
+		.swd-button 
 			{
 				background: #f2db18;
 				border: 1px solid white;
@@ -52,14 +48,20 @@
 				text-transform: uppercase;
 				margin-top: 15px;
 			}
+	
+	</style>
 
-
-
-</style>
 
 </head>
 <!-- body -->
-
+<%
+    
+	    response.setHeader("cache-control", "no-cache");
+	    response.setHeader("cache-control", "no-store");
+	    response.setHeader("pragma", "no-cache");
+	    response.setDateHeader("Expires", 0);
+    
+    %>
 <body class="main-layout">
    <!-- loader  -->
    <div class="loader_bg">
@@ -73,12 +75,14 @@
          <div class="header_to d_none">
             <div class="container">
                <div class="row">
-                  
+                   
+                    <!--  <ul class="lan">
+                     </ul> -->
                      
                      <ul class="social_icon1">
                         <li> Follow Us
                         </li>
-                        <li> <a href="https://www.google.com"><i class="fa fa-facebook" aria-hidden="true"></i>
+                        <li> <a href="https://dodropshipping.com/facebook-page-examples-ecommerce/"><i class="fa fa-facebook" aria-hidden="true"></i>
                            </a>
                         </li>
                         <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -86,12 +90,30 @@
                         <li> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i>
                            </a>
                         </li>
+                        
+                        
+                        
                      </ul>
-                  
-               <!--    <div class="col-md-6 col-sm-6 ">
-                     
-                  </div> -->
+               
+                 
+                 
                </div>
+               		<%
+               			 if(session.getAttribute("myproject")!=null)
+               			{
+               				 
+               			
+               		%>
+               		<div style="margin-left: 900px; color: white;">
+                      	<p>Your Name is :<%=session.getAttribute("name") %></p>
+                        <p>Your Email is :<%=session.getAttribute("email") %></p>
+                        <p>Your Number is :<%=session.getAttribute("phone") %></p>
+                     </div>
+                     
+                     
+                     <%
+               			}
+                     %>
             </div>
          </div>
          <div class="header_midil">
@@ -99,7 +121,7 @@
                <div class="row d_flex">
                   <div class="col-md-4 col-sm-4 d_none">
                      <ul class="conta_icon">
-                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Call Us : 9787978797</a> </li>
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Call Us : +01 1234567890</a> </li>
                      </ul>
                   </div>
                   <div class="col-md-4 col-sm-4 ">
@@ -107,21 +129,12 @@
                   </div>
                   <div class="col-md-4 col-sm-4 d_none">
                      <ul class="conta_icon ">
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> sapna@gmail.com</a> </li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> demo@gmail.com</a> </li>
                      </ul>
                   </div>
                </div>
             </div>
          </div>
-         
-         
-         <%
-         	if(session.getAttribute("myproject")!=null)
-         	{
-         		
-         	
-         %>
-         
          <div class="header_bo">
             <div class="container">
                <div class="row">
@@ -132,64 +145,69 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
-                              <li class="">
-                                 <a class="nav-link" href="index.html"> Home </a>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="index.jsp"> Home </a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="about.jsp">about</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="service.html">services</a>
+                                 <a class="nav-link" href="product.jsp">Products</a>
+                              </li>
+                              <%
+                              	if(session.getAttribute("myproject")!=null)
+                              	{
+                              		
+                              	
+                              %>
+                              
+                              <li class="nav-item">
+                                 <a class="nav-link" href="wishlist.jsp">Wishlist</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="team.html">team </a>
+                                 <a class="nav-link" href="cart.jsp">Cart</a>
                               </li>
+                              
+                              <%
+                              	}
+                              %>
+                              
                               <li class="nav-item">
-                                 <a class="nav-link" href="client.html">Clients</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="contact.html"> contact us </a>
+                                 <a class="nav-link" href="contact.jsp"> contact</a>
                               </li>
                            </ul>
                         </div>
                      </nav>
                   </div>
-                   <div class="col-md-3 col-sm-5 d_none">
-                   <%
-                   	if(session.getAttribute("myproject")!=null)
-                   	{
-                   		
-                   	
-                   %>
-                   
-                   <a class="swd-button" href="logout.jsp">Logout </a>
-                   
-                   <%
-                   	}
-                   	else
-                   	{
-                   		
-                   	
-                   %>
-                    <a class="swd-button" href="signup.jsp">sign up </a>
-                   <a class="swd-button" href="signin.jsp">sign in </a>
-                   
-                   <%
-                   	}
-                   %>
-                  </div> 
-                  
-                  
-                  
+                  <div class="col-md-3 col-sm-5 d_none">
+                    
+                       <%
+                       		if(session.getAttribute("myproject")!=null)
+                       		{
+                       			
+                       %>	
+                       
+                       	 <a class="swd-button" href="logout.jsp">Logout</a>
+                       		
+                       	
+                       	<% 		
+                       		}
+                       		else
+                       		{
+                       			
+                       		
+                       %>
+                        <a class="swd-button" href="signup.jsp">sign up</a>
+                         <a class="swd-button" href="signin.jsp">sign in</a>
+                    
+                    	<%
+                       		}
+                    	%>
+                    
+                  </div>
                </div>
             </div>
          </div>
-         <%
-         	}
-         %>
-         
-         
-         
       </div>
    </header>
    <!-- end header inner -->
