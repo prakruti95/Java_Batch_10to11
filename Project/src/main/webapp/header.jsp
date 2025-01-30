@@ -151,15 +151,16 @@
                               <li class="nav-item">
                                  <a class="nav-link" href="about.jsp">about</a>
                               </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="product.jsp">Products</a>
-                              </li>
+                             
                               <%
                               	if(session.getAttribute("myproject")!=null)
                               	{
                               		
                               	
                               %>
+                               <li class="nav-item">
+                                 <a class="nav-link" href="product.jsp">Products</a>
+                              </li>
                               
                               <li class="nav-item">
                                  <a class="nav-link" href="wishlist.jsp">Wishlist</a>
