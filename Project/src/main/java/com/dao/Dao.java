@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+import com.model.AdminModel;
 import com.model.ProductModel;
 import com.model.SignupModel;
 
@@ -184,4 +185,47 @@ public class Dao
 		return list;
 	}
 	
+	//Admin Login
+	
+	public static AdminModel adminlogin(AdminModel m)
+	{
+		
+		AdminModel m2 = null;
+		Connection con = Dao.getconnect();
+		try 
+		{
+			PreparedStatement ps = con.prepareStatement("select * from adminlogin where username=? and password=?");
+			
+			ps.setString(1,m.getUsername());
+			ps.setString(2,m.getPassword());
+			
+			ResultSet set = ps.executeQuery();
+			
+			if(set.next())
+			{
+				int id = set.getInt(1);
+				String uname = set.getString(2);
+				String pass = set.getString(3);
+				
+				m2 = new AdminModel();
+				m2.setUsername(uname);
+				m2.setPassword(pass);
+			}
+			else
+			{
+				System.out.println("Details does not match");
+			}
+			
+			
+			
+		}
+		catch (Exception e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+			return m2;
+		
+	}
 }
