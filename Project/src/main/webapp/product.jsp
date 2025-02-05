@@ -79,7 +79,18 @@
 			 	<h3><b>Name:</b> <%= m.getP_name() %></h3>
             	<p><b>Price:</b> <%= m.getP_price() %></p>
             	<p><b>Product Details:</b><%=m.getP_des() %>
+            	<form action="addtowishlist.jsp">
+            	<input type="hidden" name="id" value="<%=m.getId()%>">
+            	<input type="submit" class="swd-button" value="Wishlist">
+            </form>
+            
+            <form action="addtocart.jsp">
+            	<input type="hidden" name="id" value="<%=m.getId()%>">
+            	<input type="submit" class="swd-button" value="Cart">
+            </form>
 			 </div>
+			 
+			
 		
 		<% 		
 			}

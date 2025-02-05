@@ -24,11 +24,8 @@ import javax.servlet.http.Part;
 @WebServlet("/imageSave")
 @MultipartConfig(maxFileSize=16177216)
 public class imageSave extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-   
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
 		HttpSession ss = request.getSession(false);
@@ -88,7 +85,7 @@ public class imageSave extends HttpServlet {
 				if(r>0)
 				{
 					
-					response.sendRedirect("admindashboard.jsp");
+					response.sendRedirect("adminviewproducts.jsp");
 				}
 				else				
 				{
