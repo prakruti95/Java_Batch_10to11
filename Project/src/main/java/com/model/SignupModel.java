@@ -3,7 +3,7 @@ package com.model;
 public class SignupModel 
 {
 	int id;
-	String fullname,email,phone,password,repassword;
+	String fullname,email,phone,password;
 	
 	public int getId() {
 		return id;
@@ -35,12 +35,7 @@ public class SignupModel
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRepassword() {
-		return repassword;
-	}
-	public void setRepassword(String repassword) {
-		this.repassword = repassword;
-	}
+	
 	
 	
 }

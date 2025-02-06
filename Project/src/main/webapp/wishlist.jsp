@@ -1,3 +1,4 @@
+<%@page import="com.model.WishlistModel"%>
 <%@page import="com.dao.Dao"%>
 <%@page import="com.model.ProductModel"%>
 <%@page import="java.util.List"%>
@@ -59,30 +60,28 @@
     %>
 
 <%
+	String email = session.getAttribute("email").toString();
 	if(session.getAttribute("myproject")!=null)
 	{
 		
-	
+
 %>
 <jsp:include page="header.jsp"/>
 
 	<div class="product-grid">
 		<%
-			List<ProductModel>list = Dao.getproducts();
+			List<WishlistModel>list = Dao.getwishlistbyemail(email);
 			
-			for(ProductModel m : list)
+			for(WishlistModel m : list)
 			{
 		%>
 		
 			 <div class="product">
-			 	<img src="data:image/jpeg;base64,<%=m.getP_image()%>" width="150px" height="200px" />
+			 	 <img src="data:image/jpeg;base64,<%=m.getP_image()%>" width="150px" height="200px" />
 			 	<h3><b>Name:</b> <%= m.getP_name() %></h3>
             	<p><b>Price:</b> <%= m.getP_price() %></p>
             	<p><b>Product Details:</b><%=m.getP_des() %>
-            <form action="addtowishlist.jsp">
-            	<input type="hidden" name="id" value="<%=m.getId()%>">
-            	<input type="submit" class="swd-button" value="Wishlist">
-            </form>
+          
             
             <form action="addtocart.jsp">
             	<input type="hidden" name="id" value="<%=m.getId()%>">
