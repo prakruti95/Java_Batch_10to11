@@ -21,9 +21,9 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 
-@WebServlet("/imageSave2")
+@WebServlet("/imageSave3")
 @MultipartConfig(maxFileSize=16177216)
-public class imageSave2 extends HttpServlet
+public class imageSave3 extends HttpServlet
 {
 	
        protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -70,7 +70,7 @@ public class imageSave2 extends HttpServlet
 			Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection(usl, user, pass);
 				
-				PreparedStatement ps = con.prepareStatement("insert into wishlist(p_name,p_price,p_des,p_image,email) values(?,?,?,?,?)");
+				PreparedStatement ps = con.prepareStatement("insert into cart(p_name,p_price,p_des,p_image,email) values(?,?,?,?,?)");
 				
 				//InputStream io = new ByteArrayInputStream(image.getBytes(StandardCharsets.UTF_8));
 
@@ -88,7 +88,7 @@ public class imageSave2 extends HttpServlet
 				if(r>0)
 				{
 					
-					response.sendRedirect("wishlist.jsp");
+					response.sendRedirect("cart.jsp");
 				}
 				else				
 				{

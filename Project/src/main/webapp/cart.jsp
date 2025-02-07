@@ -1,3 +1,4 @@
+<%@page import="com.model.CartModel"%>
 <%@page import="com.model.WishlistModel"%>
 <%@page import="com.dao.Dao"%>
 <%@page import="com.model.ProductModel"%>
@@ -70,9 +71,9 @@
 
 	<div class="product-grid">
 		<%
-			List<WishlistModel>list = Dao.getwishlistbyemail(email);
+			List<CartModel>list = Dao.getcartbyemail(email);
 			
-			for(WishlistModel m : list)
+			for(CartModel m : list)
 			{
 		%>
 		
@@ -83,9 +84,9 @@
             	<p><b>Product Details:</b><%=m.getP_des() %>
           
             
-            <form action="addtocart2.jsp">
+            <form action="removefromcart.jsp">
             	<input type="hidden" name="id" value="<%=m.getId()%>">
-            	<input type="submit" class="swd-button" value="Cart">
+            	<input type="submit" class="swd-button" value="Remove From Cart">
             </form>
 			 </div>
 			 

@@ -34,9 +34,13 @@
 	   
    
     
-<form action="imageSave3" method="post" enctype="multipart/form-data" class="requires-validation" novalidate>		
+<form action="imageSave4" method="post" enctype="multipart/form-data" class="requires-validation" novalidate>		
 
-	<div class="form-group input-group">
+
+			<div class="form-group input-group">
+				<input name="id" class="form-control" placeholder="Product Name" type="hidden" id="id" value="<%=wm.getId()%>">
+			</div>
+			<div class="form-group input-group">
 				<input name="p_name" class="form-control" placeholder="Product Name" type="hidden" id="p_name" value="<%=wm.getP_name()%>">
 			</div>
 			
