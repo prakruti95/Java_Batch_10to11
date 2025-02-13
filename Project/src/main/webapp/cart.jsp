@@ -88,6 +88,11 @@
             	<input type="hidden" name="id" value="<%=m.getId()%>">
             	<input type="submit" class="swd-button" value="Remove From Cart">
             </form>
+            
+               <form action="payment.jsp">
+            	<input type="hidden" name="id" value="<%=m.getId()%>">
+            	<input type="submit" class="swd-button" value="Proceed to Payment">
+            </form>
 			 </div>
 			 
 			

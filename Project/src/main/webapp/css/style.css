@@ -352,13 +352,13 @@ ul.lan li {
      padding-top: 3px;
 }
 
-ul.social_icon1 {
+ul.lan {
      display: flex;
      justify-content: flex-end;
      flex-wrap: wrap;
 }
 
-ul.social_icon1 li {
+ul.lan li {
      height: 30px;
      color: #fff;
      display: flex;
@@ -367,7 +367,7 @@ ul.social_icon1 li {
      padding-right: 15px;
 }
 
-ul.social_icon1 li a {
+ul.lan li a {
      color: #fff;
      float: left;
      text-align: center;
@@ -376,7 +376,7 @@ ul.social_icon1 li a {
      font-size: 20px;
 }
 
-ul.social_icon1 li:last-child {
+ul.lan li:last-child {
      padding-right: 0px;
 }
 

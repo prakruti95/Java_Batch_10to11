@@ -1,4 +1,5 @@
 <%@page import="com.model.CartModel"%>
+<%@page import="com.model.WishlistModel"%>
 <%@page import="java.util.List"%>
 <%@page import="com.dao.Dao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
