@@ -4,7 +4,6 @@ public class PaymentModel
 {
 	int id;
 	String p_name,p_price,p_des,p_image,email;
-	
 	public int getId() {
 		return id;
 	}
@@ -41,6 +40,9 @@ public class PaymentModel
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
+	
 	
 	
 }

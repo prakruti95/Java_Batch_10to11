@@ -14,11 +14,15 @@
 
 
 	<%
-			String id = request.getParameter("id");
+	String id = request.getParameter("id");
 			int id2 = Integer.parseInt(id);
 			List<PaymentModel>list = Dao.getpaymentbyid(id2);
 			for(PaymentModel pm : list)
 			{
+				
+				session.setAttribute("p_name",pm.getP_name());
+				session.setAttribute("p_id",pm.getId());
+				
 	%>
 
   <form id="paymentForm">
@@ -42,6 +46,7 @@
             "description": "Test Transaction",
             "handler": function (response) {
                 alert("Payment successful. Payment ID: " + response.razorpay_payment_id);
+                window.location.href = 'xyz.jsp';
                 // You can redirect to a success page or handle success here
             },
             "theme": {
