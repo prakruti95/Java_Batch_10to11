@@ -593,4 +593,150 @@ public class Dao
 		return list;
 	}
 	
+	public static List<ContactModel> getcontactdetails()
+	{
+		Connection con = Dao.getconnect();
+		List<ContactModel>list = new ArrayList<>();
+		
+		try 
+		{
+			PreparedStatement ps = con.prepareStatement("select * from contact");
+			ResultSet set = ps.executeQuery();
+			
+			while(set.next())
+			{
+				int id = set.getInt(1);
+				String name = set.getString(2);
+				String email = set.getString(3);
+				String phone = set.getString(4);
+				String query = set.getString(5);
+				
+				ContactModel pm = new ContactModel();
+				pm.setId(id);
+				pm.setName(name);
+				pm.setEmail(email);
+				pm.setNumber(phone);
+				pm.setQuery(query);
+				list.add(pm);
+				
+			}
+		}
+		catch (SQLException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	  public static ProductModel getimageindexwise(int id)
+			{
+				Connection con = Dao.getconnect();
+				
+				ProductModel m = new ProductModel();
+				
+				String sql ="select * from products where id=?";
+				
+				try 
+				{
+					PreparedStatement ps = con.prepareStatement(sql);
+					ps.setInt(1,id);
+					
+					ResultSet set = ps.executeQuery();
+					
+					if(set.next())
+					{
+						
+							
+						
+						 byte[] imgData = set.getBytes("p_image"); // blob field 
+				         String encode = Base64.getEncoder().encodeToString(imgData);
+				         
+				         int id1 = set.getInt("id");
+				         String pname = set.getString("p_name");
+				         String pprice = set.getString("p_price");
+				         String pdes = set.getString("p_des");
+						
+						
+				        
+				         m.setId(id);
+				         m.setP_image(encode);
+						m.setP_name(pname);
+						m.setP_price(pprice);
+						m.setP_des(pdes);
+						
+						
+						
+					}
+					
+					//get all details from model
+					
+					
+					
+				}
+				catch (Exception e) 
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+				return m;
+			}
+	  
+	  public static WishlistModel getimageindexwise2(int id)
+		{
+			Connection con = Dao.getconnect();
+			
+			WishlistModel m = new WishlistModel();
+			
+			String sql ="select * from wishlist where id=?";
+			
+			try 
+			{
+				PreparedStatement ps = con.prepareStatement(sql);
+				ps.setInt(1,id);
+				
+				ResultSet set = ps.executeQuery();
+				
+				if(set.next())
+				{
+					
+						
+					
+					 byte[] imgData = set.getBytes("p_image"); // blob field 
+			         String encode = Base64.getEncoder().encodeToString(imgData);
+			         
+			         int id1 = set.getInt("id");
+			         String pname = set.getString("p_name");
+			         String pprice = set.getString("p_price");
+			         String pdes = set.getString("p_des");
+					
+					
+			        
+			         m.setId(id);
+			         m.setP_image(encode);
+					m.setP_name(pname);
+					m.setP_price(pprice);
+					m.setP_des(pdes);
+					
+					
+					
+				}
+				
+				//get all details from model
+				
+				
+				
+			}
+			catch (Exception e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			return m;
+		}
+	
 }

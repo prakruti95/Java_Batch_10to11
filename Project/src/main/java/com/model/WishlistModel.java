@@ -2,9 +2,8 @@ package com.model;
 
 public class WishlistModel 
 {
-	int id;
-	String p_name,p_price,p_des,p_image,email;
-	
+	private int id;
+	private  String p_name,p_price,p_des,p_image,email;
 	public int getId() {
 		return id;
 	}
@@ -35,12 +34,15 @@ public class WishlistModel
 	public void setP_image(String p_image) {
 		this.p_image = p_image;
 	}
+	
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	
 	
 	
 }

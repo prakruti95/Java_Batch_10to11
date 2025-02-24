@@ -1,6 +1,8 @@
-<%@page import="com.model.CartModel"%>
-<%@page import="java.util.List"%>
+<%@page import="com.model.ProductModel"%>
 <%@page import="com.dao.Dao"%>
+<%@page import="com.model.CartModel"%>
+<%@page import="com.model.WishlistModel"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,69 +10,112 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+
+
+
 </head>
 <body>
-
-	<jsp:include page="header.jsp"/>
+<jsp:include page="header.jsp"/>
 	<%
-	
-		String id = request.getParameter("id");
-		int id2 = Integer.parseInt(id);
-		List<CartModel>list = Dao.getcartbyid(id2);
-		for(CartModel wm : list)
-		{
-			
 		
+		if(session.getAttribute("myproject")!=null)
+		{
+			String id = request.getParameter("id");
+			int id2 = Integer.parseInt(id);
+			System.out.print(id2);
+			WishlistModel m = Dao.getimageindexwise2(id2);
+			String number = request.getParameter("number");
+			int num2 = Integer.parseInt(number);
+			int price = Integer.parseInt(m.getP_price()); 
+			
 	%>
-	<br>
-	<br>
-	<center>
-		<img src="data:image/jpeg;base64,<%=wm.getP_image()%>" width="150px" height="200px" />
-		<h3><b>Name:</b> <%= wm.getP_name() %></h3>
-	    <p><b>Price:</b> <%= wm.getP_price() %></p>
-	    <p><b>Product Details:</b><%=wm.getP_des() %>
-	    <br>
-	   
-	   
+		
+			<br>
+			<br>
+			<center>
+			<%-- 	<h2><%=m.getId() %></h2> --%>
+			<h2><%=m.getP_name() %></h2>
+			<h3><%=m.getP_price() %></h3>
+			<h3><%=m.getP_des() %></h3>
+			<img src="data:image/jpeg;base64,<%=m.getP_image()%>" width="350px" height="300px" />
    
-    
-<form action="imageSave4" method="post" enctype="multipart/form-data" class="requires-validation" novalidate>		
+   			<%!
+   			
+   					int count(int num2,int price)
+   					{
+   						return num2*price;
+   					}
+   			
+   			%>
+   			
+   			<% int finalprice = count(num2, price);%>
+   
+		<form action="imageSave4" method="post" enctype="multipart/form-data" class="requires-validation" novalidate>
 
 
-			<div class="form-group input-group">
-				<input name="id" class="form-control" placeholder="Product Name" type="hidden" id="id" value="<%=wm.getId()%>">
-			</div>
-			<div class="form-group input-group">
-				<input name="p_name" class="form-control" placeholder="Product Name" type="hidden" id="p_name" value="<%=wm.getP_name()%>">
-			</div>
-			
-			<div class="form-group input-group">
-				<input name="p_price" class="form-control" placeholder="Product Price" type="hidden" id="p_price"value="<%=wm.getP_price()%>">
-			</div>
-			
-			<div class="form-group input-group">
-				<input name="p_des" class="form-control" placeholder="Product Description" type="hidden" id="p_des"value="<%=wm.getP_des()%>">
-			</div>
-			
-			<div class="form-group input-group">
-				<input type="hidden" name="p_image" value="data:image/jpeg;base64,<%=wm.getP_image() %>" /> 
-			</div>
-			
-			<div class="form-group input-group">
-					<input name="email" class="form-control" placeholder="Product Description" type="hidden" id="email"value="<%=session.getAttribute("email")%>">
-			</div>
-			<!-- form-group// -->
-			<div class="form-group">
-			 <input type="submit" class="swd-button" value="Add to Cart">
-			</div>
-			<!-- form-group// -->
-			
-		</form>
-     </center>	
-	<%
+							 <div class="col-md-12">
+                               <input class="form-control" type="text" name="id" placeholder="Product Name" value="<%=m.getId() %>" required>
+                            </div>
+                            
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="p_name" placeholder="Product Name" value="<%=m.getP_name() %>" required>
+                            </div>
+                            
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="p_price" placeholder="Product Price" value="<%=m.getP_price() %>" required>
+                            </div>
+                            
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="p_des" placeholder="Product Description" value="<%=m.getP_des() %>" readonly="readonly">
+                            </div>
+                            
+                             <div class="col-md-12">
+                               <input class="form-control" type="text" name="p_qua" placeholder="Product Description" value="<%=num2%>" readonly="readonly">
+                            </div>
+                            
+                             <div class="col-md-12">
+                               <input class="form-control" type="text" name="email" placeholder="Product Description" value="<%=session.getAttribute("email")	%>" readonly="readonly">
+                            </div>
+                            
+                            <br>
+                            
+                              <div class="col-md-12">
+                               <input class="form-control" type="text" name="fp" placeholder="Product Description" value="<%=finalprice %>" readonly="readonly">
+                            </div>
+                            
+                            <div class="col-md-12">
+                            	<input type="hidden" name="p_image" value="data:image/jpeg;base64,<%=m.getP_image() %>" /> 
+                             </div>
+                               
+                  			<br>
+                  
+
+                            <div class="form-button mt-3">
+                                <button id="submit" type="submit" class="btn btn-primary">Add to Cart </button>
+                            </div>
+                        </form>
+	
+	<% 		
 		}
-	%>
-	<jsp:include page="footer.jsp"/>
+		else
+		{
 
+	%>
+			<br>
+			<center>
+					
+					<b><p style="color:red;font-family: sans-serif; font-size: 25px;">Please Login First!!</p></b>
+				</center>
+
+				<br>
+				<br>
+			<%@ include file="signin.jsp"%>
+
+		<% 
+		}
+		%>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
