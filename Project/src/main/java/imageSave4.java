@@ -37,7 +37,7 @@ public class imageSave4 extends HttpServlet {
 		if(ss != null)
 		{
 		
-		String usl = "jdbc:mysql://localhost:3306/webwing";
+		String usl = "jdbc:mysql://localhost:3306/project";
 		String user = "root";
 		String pass = "";
 		
@@ -83,9 +83,9 @@ public class imageSave4 extends HttpServlet {
 			try {
 				
 			Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection(usl, user, pass);
+			con = DriverManager.getConnection(usl, user, pass);
 				
-				PreparedStatement ps = con.prepareStatement("insert into cart(p_name,p_price,p_des,p_image) values(?,?,?,?)");
+			PreparedStatement ps = con.prepareStatement("insert into cart(p_name,p_price,p_des,p_qua,email,fp,p_image) values(?,?,?,?,?,?,?)");
 				
 				//InputStream io = new ByteArrayInputStream(image.getBytes(StandardCharsets.UTF_8));
 
@@ -94,7 +94,10 @@ public class imageSave4 extends HttpServlet {
 				ps.setString(1, name);
 				ps.setString(2, price);				
 				ps.setString(3, description);
-				ps.setBlob(4,io);
+				ps.setString(4,p_qua);
+				ps.setString(5,email);
+				ps.setString(6,fp);
+				ps.setBlob(7, io);
 				//ps.setString(5, email);
 				
 				r = ps.executeUpdate();
@@ -104,13 +107,20 @@ public class imageSave4 extends HttpServlet {
 					System.out.println("done");
 					Thread.sleep(1000);
 					
-					/*
-					 * PreparedStatement ps2 =
-					 * con.prepareStatement("delete from wishlist where p_id=?"); ps2.setInt(1,id2);
-					 * 
-					 * int status = ps2.executeUpdate(); if(status>0) {
-					 * response.sendRedirect("cart.jsp"); } else { System.out.println("Error"); }
-					 */
+					
+					 PreparedStatement ps2 =con.prepareStatement("delete from wishlist where id=?");
+					 ps2.setInt(1,id2);
+					  
+					  int status = ps2.executeUpdate(); 
+					  if(status>0) 
+					  {
+						  response.sendRedirect("cart.jsp");
+					   }
+					  else 
+					  {
+						  System.out.println("Error"); 
+					  }
+					 
 					
 				}
 				else				{
