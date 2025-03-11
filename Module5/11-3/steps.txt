@@ -1,0 +1,23 @@
+1. Create Dynamic Web Project
+
+2.Add Jar File
+MVC
+ORM
+
+3.Create JSP Folder inside WEB-INF
+->also create index.jsp
+
+4.Create web.xml file
+->call spring-servlet.xml file here
+->for automatic code write "dispatcherservlet"
+
+4. Create spring-servlet.xml[Beans file]
+->call
+prefix -> WEB-INF/jsp
+suffix -> .jsp
+->also call controller
+
+5. Create Controller and call index file
+@RequestMapping
+
+
