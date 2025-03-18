@@ -20,10 +20,10 @@ public class User
 	String uname;
 	
 	@Column(name = "email")
-	String uemail;
+	String email;
 	
 	@Column(name = "password")
-	String upassword;
+	String password;
 
 	public int getId() {
 		return id;
@@ -41,21 +41,23 @@ public class User
 		this.uname = uname;
 	}
 
-	public String getUemail() {
-		return uemail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUemail(String uemail) {
-		this.uemail = uemail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getUpassword() {
-		return upassword;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUpassword(String upassword) {
-		this.upassword = upassword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
+
 	
 	
 }
