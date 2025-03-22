@@ -1,0 +1,31 @@
+Spring Security:
+
+1)
+First Page - Open - Login Form
+
+
+Jar Files-Dependency - spring security,OAuth
+
+application.properties:
+
+1)
+Random Pass->
+Username:user
+Password:random password
+
+2)
+spring.security.user.name="krunal"
+spring.security.user.password="1234"
+
+
+2)
+Customization
+Role Wise Auth
+
+
+id name password role
+1  a    1234     USER
+2  b    5678     ADMIN 
+
+
+
